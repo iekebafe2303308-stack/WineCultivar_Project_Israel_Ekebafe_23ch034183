@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wine Cultivar Origin Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Wine Cultivar Origin Prediction</h1>
+    <p>Enter values for the 6 selected features below to predict the cultivar (1, 2, or 3).</p>
+
+    <form method="POST" class="form">
+      {% for feat in features %}
+      <div class="form-group">
+        <label for="{{ feat }}">{{ feat.replace('_', ' ') }}</label>
+        <input
+          type="number"
+          step="any"
+          name="{{ feat }}"
+          id="{{ feat }}"
+          required
+        />
+      </div>
+      {% endfor %}
+
+      <button type="submit">Predict Cultivar</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        <h2>Predicted Cultivar: {{ prediction }}</h2>
+      </div>
+    {% endif %}
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>

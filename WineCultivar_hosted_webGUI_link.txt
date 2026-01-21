@@ -1,0 +1,6 @@
+Name: Israel Tochukwu Ekebafe
+Matric Number: 23CH034183
+Machine Learning Algorithm Used: Logistic Regression
+Model Persistence Method: Joblib
+Live Hosted URL: https://example.com/your-live-app
+GitHub Repository Link: https://github.com/your-username/your-repo
